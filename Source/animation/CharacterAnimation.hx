@@ -69,15 +69,19 @@ class CharacterAnimation
 
         rig.head.rotation = breathing * 1.5;
 
-        rig.leftArm.rotation = -breathing * 2;
-        rig.leftForearm.rotation = breathing * 1.5;
-        rig.rightArm.rotation = breathing * 2;
-        rig.rightForearm.rotation = -breathing * 1.5;
+        rig.leftArm.rotation = -breathing * 5;
+        rig.leftForearm.rotation = -breathing * -9;
+        rig.rightArm.rotation = breathing * 5;
+        rig.rightForearm.rotation = breathing * -9;
 
-        rig.leftLeg.rotation = breathing * 0.5;
-        rig.leftShin.rotation = -breathing * 0.35;
-        rig.rightLeg.rotation = -breathing * 0.5;
-        rig.rightShin.rotation = breathing * 0.35;
+        rig.leftLeg.rotation = breathing * 4;
+        rig.leftShin.setAnimationRotation(-breathing * 4);
+        rig.rightLeg.rotation = -breathing * 4;
+        rig.rightShin.setAnimationRotation(breathing * 4);
+
+        
+        rig.rightShin.setAnimationPosition(0, -breathing * 3);
+        rig.leftShin.setAnimationPosition(0, -breathing * 3);
     }
 
 

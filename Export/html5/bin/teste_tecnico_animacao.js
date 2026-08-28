@@ -913,7 +913,7 @@ ApplicationMain.main = function() {
 ApplicationMain.create = function(config) {
 	var app = new openfl_display_Application();
 	ManifestResources.init(config);
-	app.meta.h["build"] = "5";
+	app.meta.h["build"] = "7";
 	app.meta.h["company"] = "GGSoft";
 	app.meta.h["file"] = "teste_tecnico_animacao";
 	app.meta.h["name"] = "GGSoft Teste Técnico - Animação";
@@ -4228,14 +4228,16 @@ animation_CharacterAnimation.prototype = {
 		var breathing = Math.sin(cycle / 2.0 * Math.PI * 2);
 		this.rig.body.setAnimationPosition(0,breathing * 3);
 		this.rig.head.set_rotation(breathing * 1.5);
-		this.rig.leftArm.set_rotation(-breathing * 2);
-		this.rig.leftForearm.set_rotation(breathing * 1.5);
-		this.rig.rightArm.set_rotation(breathing * 2);
-		this.rig.rightForearm.set_rotation(-breathing * 1.5);
-		this.rig.leftLeg.set_rotation(breathing * 0.5);
-		this.rig.leftShin.set_rotation(-breathing * 0.35);
-		this.rig.rightLeg.set_rotation(-breathing * 0.5);
-		this.rig.rightShin.set_rotation(breathing * 0.35);
+		this.rig.leftArm.set_rotation(-breathing * 5);
+		this.rig.leftForearm.set_rotation(-breathing * -9);
+		this.rig.rightArm.set_rotation(breathing * 5);
+		this.rig.rightForearm.set_rotation(breathing * -9);
+		this.rig.leftLeg.set_rotation(breathing * 4);
+		this.rig.leftShin.setAnimationRotation(-breathing * 4);
+		this.rig.rightLeg.set_rotation(-breathing * 4);
+		this.rig.rightShin.setAnimationRotation(breathing * 4);
+		this.rig.rightShin.setAnimationPosition(0,-breathing * 3);
+		this.rig.leftShin.setAnimationPosition(0,-breathing * 3);
 	}
 	,updateWave: function(dt) {
 		if(!this.wavePlaying) {
@@ -25392,7 +25394,7 @@ var lime_utils_AssetCache = function() {
 	this.audio = new haxe_ds_StringMap();
 	this.font = new haxe_ds_StringMap();
 	this.image = new haxe_ds_StringMap();
-	this.version = 501533;
+	this.version = 354365;
 };
 $hxClasses["lime.utils.AssetCache"] = lime_utils_AssetCache;
 lime_utils_AssetCache.__name__ = "lime.utils.AssetCache";
@@ -81428,8 +81430,8 @@ rig_CharacterRig.prototype = $extend(openfl_display_Sprite.prototype,{
 		this.addSkinPart("assets/character/Body.png",this.body,3,3,null,0.5,0.5);
 		this.addSkinPart("assets/character/LArm.png",this.leftArm,4,10,this.leftForearm,0.5,0,true,0.35,0.55,0.85);
 		this.addSkinPart("assets/character/RArm.png",this.rightArm,10,10,this.rightForearm,0.5,0,true,0.35,0.55,1);
-		this.addSkinPart("assets/character/LLeg.png",this.leftLeg,3,10,this.leftShin,0.5,0,true);
-		this.addSkinPart("assets/character/RLeg.png",this.rightLeg,3,10,this.rightShin,0.5,0,true);
+		this.addSkinPart("assets/character/LLeg.png",this.leftLeg,3,10,this.leftShin,0.5,0,true,0.35,0.55,1);
+		this.addSkinPart("assets/character/RLeg.png",this.rightLeg,3,10,this.rightShin,0.5,0,true,0.35,0.55,1);
 		this.addSkinPart("assets/character/Head.png",this.head,4,4,this.body,0.5,1,true);
 		this.addSkinPart("assets/character/LEye.png",this.leftEye,1,1,this.head,0.5,0.5,true,0.5,0.5,0.2);
 		this.addSkinPart("assets/character/REye.png",this.rightEye,1,1,this.head,0.5,0.5,true,0.5,0.5,0.2);
