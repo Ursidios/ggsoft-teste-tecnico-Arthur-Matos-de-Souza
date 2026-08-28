@@ -118,7 +118,7 @@ class CharacterRig extends Sprite
 
 		addSkinPart("assets/character/Body.png", body, 3, 3, null, 0.5, 0.5);
 		addSkinPart("assets/character/LArm.png", leftArm, 4, 10, leftForearm, 0.5, 0, true, 0.35, 0.55, 0.85);
-		addSkinPart("assets/character/RArm.png", rightArm, 10, 10, rightForearm, 0.5, 0, true, 0.35, 0.55, 0.85);
+		addSkinPart("assets/character/RArm.png", rightArm, 10, 10, rightForearm, 0.5, 0, true, 0.35, 0.55, 1);
 		addSkinPart("assets/character/LLeg.png", leftLeg, 3, 10, leftShin, 0.5, 0, true);
 		addSkinPart("assets/character/RLeg.png", rightLeg, 3, 10, rightShin, 0.5, 0, true);
 		addSkinPart("assets/character/Head.png", head, 4, 4, body, 0.5, 1, true);
