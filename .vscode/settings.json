@@ -1,0 +1,11 @@
+{
+    "haxe.executable": "C:/HaxeToolkit/haxe/haxe.exe",
+    "haxe.configurations": [
+        {
+            "label": "OpenFL HTML5",
+            "args": ["build.hxml"],
+            "files": ["Source/**/*.hx"]
+        }
+    ],
+    "makefile.configureOnOpen": false
+}
